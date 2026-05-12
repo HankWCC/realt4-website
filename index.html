@@ -3,70 +3,937 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealT4</title>
+  <title>RealT4 | Software Technology R&D for Data-Driven Spatial Operations</title>
+  <meta name="description" content="RealT4 builds enterprise-grade software platforms for 3D spatial visualization, IoT data integration, VMS/BMS integration, digital twin operations, and interactive facility dashboards." />
   <style>
+    :root {
+      --bg: #05090d;
+      --bg-2: #081018;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-2: rgba(255, 255, 255, 0.085);
+      --line: rgba(118, 255, 218, 0.18);
+      --line-soft: rgba(255, 255, 255, 0.11);
+      --text: #f3f7fb;
+      --muted: #a7b4c4;
+      --muted-2: #718095;
+      --accent: #38f5c5;
+      --accent-2: #5ab8ff;
+      --warning: #f9c74f;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #080d12;
-      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(56, 245, 197, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(90, 184, 255, 0.14), transparent 30%),
+        radial-gradient(circle at 50% 88%, rgba(56, 245, 197, 0.08), transparent 34%),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 72%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 9, 13, 0.76);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #031016;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 0 32px rgba(56, 245, 197, 0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 11px 17px;
+      border: 1px solid rgba(56, 245, 197, 0.38);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(56, 245, 197, 0.08);
     }
 
     .hero {
-      min-height: 100vh;
-      display: flex;
+      min-height: calc(100vh - 76px);
+      display: grid;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
+      padding: 72px 0 96px;
+      position: relative;
     }
 
-    .content {
-      max-width: 900px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
     }
 
-    .label {
-      color: #39f5c5;
-      letter-spacing: 2px;
-      font-size: 14px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      font-weight: 700;
       margin-bottom: 20px;
     }
 
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(56, 245, 197, 0.72);
+    }
+
     h1 {
-      font-size: 56px;
-      line-height: 1.1;
+      font-size: clamp(44px, 6vw, 82px);
+      line-height: 0.98;
       margin: 0 0 24px;
+      letter-spacing: -2.4px;
     }
 
-    p {
-      font-size: 20px;
-      line-height: 1.6;
-      color: #b7c7d8;
-      margin-bottom: 32px;
+    .hero p {
+      color: #bed0df;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.65;
+      margin: 0 0 34px;
+      max-width: 720px;
     }
 
-    .button {
-      display: inline-block;
-      padding: 14px 28px;
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
       border-radius: 999px;
-      background: #39f5c5;
-      color: #061018;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #031016;
+      background: linear-gradient(135deg, var(--accent), #78ffe0);
+      box-shadow: 0 18px 50px rgba(56, 245, 197, 0.24);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.045);
+    }
+
+    .visual-card {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035)),
+        radial-gradient(circle at 70% 18%, rgba(56, 245, 197, 0.18), transparent 30%),
+        rgba(8,16,24,0.84);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56,245,197,0.075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,245,197,0.075) 1px, transparent 1px);
+      background-size: 34px 34px;
+      transform: perspective(500px) rotateX(55deg) translateY(80px) scale(1.3);
+      transform-origin: bottom;
+      opacity: 0.55;
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 56px;
+      border: 1px solid rgba(90,184,255,0.20);
+      border-radius: 50%;
+      transform: rotate(-18deg) scaleY(0.52);
+    }
+
+    .building {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 270px;
+      height: 270px;
+      transform: translate(-50%, -46%) rotateX(58deg) rotateZ(45deg);
+      transform-style: preserve-3d;
+    }
+
+    .tower {
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, rgba(90,184,255,0.85), rgba(56,245,197,0.85));
+      border: 1px solid rgba(255,255,255,0.36);
+      box-shadow: 0 0 36px rgba(56,245,197,0.18);
+    }
+
+    .tower::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(3,16,22,0.32);
+      background-image:
+        linear-gradient(rgba(3,16,22,0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(3,16,22,0.25) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    .t1 { left: 28px; top: 44px; height: 126px; }
+    .t2 { left: 122px; top: 8px; height: 178px; }
+    .t3 { left: 122px; top: 154px; height: 104px; }
+    .t4 { left: 28px; top: 178px; height: 74px; }
+
+    .data-pill {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(3, 16, 22, 0.72);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #dce9f3;
+      font-size: 12px;
+      box-shadow: 0 16px 38px rgba(0,0,0,0.24);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(56,245,197,0.9);
+    }
+
+    .pill-1 { top: 72px; left: 48px; }
+    .pill-2 { top: 172px; right: 36px; }
+    .pill-3 { bottom: 86px; left: 58px; }
+    .pill-4 { bottom: 46px; right: 52px; }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.78fr 1fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -1.5px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+      padding: 28px;
+      box-shadow: 0 14px 50px rgba(0,0,0,0.22);
+    }
+
+    .card:hover {
+      border-color: rgba(56,245,197,0.32);
+      background: linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.042));
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #031016;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    .card p,
+    .feature p,
+    .case p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .platform {
+      border: 1px solid rgba(56,245,197,0.18);
+      border-radius: 34px;
+      overflow: hidden;
+      background: rgba(8,16,24,0.68);
+      box-shadow: var(--shadow);
+    }
+
+    .platform-top {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 32px;
+      padding: 34px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .platform-map {
+      min-height: 340px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        radial-gradient(circle at 40% 35%, rgba(56,245,197,0.24), transparent 24%),
+        radial-gradient(circle at 70% 62%, rgba(90,184,255,0.20), transparent 28%),
+        rgba(255,255,255,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .platform-node {
+      position: absolute;
+      border: 1px solid rgba(56,245,197,0.34);
+      background: rgba(3,16,22,0.76);
+      border-radius: 18px;
+      padding: 12px 14px;
+      color: #dff7f1;
+      font-size: 13px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+    }
+
+    .n1 { top: 38px; left: 38px; }
+    .n2 { top: 126px; right: 38px; }
+    .n3 { bottom: 44px; left: 70px; }
+    .n4 { bottom: 66px; right: 78px; }
+    .n5 { top: 49%; left: 50%; transform: translate(-50%, -50%); background: rgba(56,245,197,0.16); }
+
+    .platform-copy {
+      align-self: center;
+    }
+
+    .platform-copy h3 {
+      font-size: clamp(28px, 3.2vw, 42px);
+      letter-spacing: -1px;
+    }
+
+    .platform-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .feature {
+      padding: 26px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .solution-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: rgba(56,245,197,0.08);
+    }
+
+    .solution-tag {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .use-case {
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .use-case::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(56,245,197,0.13), transparent 45%),
+        linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.035) 50%, rgba(255,255,255,0.035) 75%, transparent 75%);
+      background-size: auto, 26px 26px;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .use-case > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .case {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .case-number {
+      height: 132px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      background: rgba(56,245,197,0.10);
+      border: 1px solid rgba(56,245,197,0.22);
+      color: var(--accent);
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .contact {
+      padding-bottom: 118px;
+    }
+
+    .contact-box {
+      border-radius: 34px;
+      border: 1px solid rgba(56,245,197,0.22);
+      background:
+        radial-gradient(circle at 84% 20%, rgba(56,245,197,0.16), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+      box-shadow: var(--shadow);
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 18px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .contact-panel {
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 26px;
+      padding: 26px;
+      background: rgba(3,16,22,0.55);
+    }
+
+    .contact-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-item strong {
+      color: var(--text);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 0;
+      color: var(--muted-2);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-head,
+      .platform-top,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-2,
+      .stats,
+      .platform-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .visual-card {
+        min-height: 420px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .hero {
+        padding: 56px 0 72px;
+      }
+
+      .grid-3,
+      .grid-2,
+      .stats,
+      .platform-list {
+        grid-template-columns: 1fr;
+      }
+
+      .case {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        margin-bottom: 28px;
+      }
+
+      .card,
+      .contact-box,
+      .platform-top {
+        padding: 24px;
+      }
+
+      h1 {
+        letter-spacing: -1.4px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="content">
-      <div class="label">REALT4</div>
-      <h1>Software Technology R&D for Data-Driven Spatial Operations</h1>
-      <p>
-        Transform physical spaces into digital operation environments through
-        3D spatial visualization, IoT data integration, and interactive software platforms.
-      </p>
-      <a class="button" href="#">Explore Solutions</a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="RealT4 Home">
+        <span class="brand-mark">R4</span>
+        <span>RealT4</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#talentrue">Talentrue</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#use-cases">Use Cases</a>
+        <a class="nav-cta" href="#contact">Request Demo</a>
+      </nav>
     </div>
-  </section>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Enterprise Software R&D</div>
+          <h1>Software Technology R&D for Data-Driven Spatial Operations</h1>
+          <p>
+            RealT4 builds enterprise-grade software platforms that transform physical spaces into digital operation environments through 3D spatial visualization, IoT data integration, and interactive dashboards.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#solutions">Explore Solutions</a>
+            <a class="btn btn-secondary" href="#contact">Request a Demo</a>
+          </div>
+        </div>
+
+        <div class="visual-card" aria-label="Digital twin platform visual">
+          <div class="orbit"></div>
+          <div class="building">
+            <div class="tower t1"></div>
+            <div class="tower t2"></div>
+            <div class="tower t3"></div>
+            <div class="tower t4"></div>
+          </div>
+          <div class="data-pill pill-1"><span class="dot"></span> IoT Sensors</div>
+          <div class="data-pill pill-2"><span class="dot"></span> VMS / BMS</div>
+          <div class="data-pill pill-3"><span class="dot"></span> 3D Operations</div>
+          <div class="data-pill pill-4"><span class="dot"></span> Real-Time Dashboard</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">What RealT4 Builds</div>
+            <h2>Software platforms for physical spaces, data systems, and operational decisions.</h2>
+          </div>
+          <p class="section-desc">
+            We focus on turning fragmented site data into usable software interfaces. The goal is not only to visualize buildings or facilities, but to support daily operations, monitoring, management, and system integration.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">3D</div>
+            <h3>3D Spatial Visualization</h3>
+            <p>Interactive 3D spaces, site models, spatial dashboards, equipment mapping, and digital twin interfaces for facility and industrial operations.</p>
+          </article>
+          <article class="card">
+            <div class="icon">IoT</div>
+            <h3>IoT Data Integration</h3>
+            <p>Integration across sensors, edge devices, gateways, protocols, and cloud services to create reliable data flows for real-world operations.</p>
+          </article>
+          <article class="card">
+            <div class="icon">API</div>
+            <h3>System Integration</h3>
+            <p>Connection with VMS, BMS, EMS, databases, cloud platforms, and enterprise systems to avoid isolated dashboards and duplicated workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="talentrue">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Talentrue Platform</div>
+            <h2>A software foundation for connected spatial operations.</h2>
+          </div>
+          <p class="section-desc">
+            Talentrue is positioned as a platform concept for integrating spatial models, IoT data, video systems, and operation dashboards into one extensible software environment.
+          </p>
+        </div>
+
+        <div class="platform">
+          <div class="platform-top">
+            <div class="platform-map">
+              <div class="platform-node n1">IoT Devices</div>
+              <div class="platform-node n2">VMS / BMS</div>
+              <div class="platform-node n3">Cloud Data</div>
+              <div class="platform-node n4">Operation UI</div>
+              <div class="platform-node n5">Talentrue Core</div>
+            </div>
+            <div class="platform-copy">
+              <h3>From physical assets to software-driven operation environments.</h3>
+              <p class="section-desc">
+                Talentrue helps teams connect location, equipment, sensor data, video context, and workflow information. This allows stakeholders to see not only where something is, but also what is happening, what requires attention, and what action should be taken next.
+              </p>
+            </div>
+          </div>
+          <div class="platform-list">
+            <div class="feature"><strong>Spatial Layer</strong><p>3D site structure, floors, zones, and asset mapping.</p></div>
+            <div class="feature"><strong>Data Layer</strong><p>IoT, system APIs, event streams, and external datasets.</p></div>
+            <div class="feature"><strong>Application Layer</strong><p>Dashboards, alerts, workflows, and user-facing interfaces.</p></div>
+            <div class="feature"><strong>Integration Layer</strong><p>Connections with enterprise systems and operation tools.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Solutions</div>
+            <h2>Practical solution modules for enterprise sites and distributed assets.</h2>
+          </div>
+          <p class="section-desc">
+            RealT4 supports solution development for smart buildings, factories, data centers, campuses, and public infrastructure where data needs to be integrated, visualized, and turned into operational value.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card solution-card">
+            <div>
+              <div class="solution-tag">Facility Operations</div>
+              <h3>3D Digital Twin Dashboard</h3>
+              <p>Provide a spatial operation interface that combines facility status, equipment location, alarms, and real-time monitoring.</p>
+            </div>
+          </article>
+          <article class="card solution-card">
+            <div>
+              <div class="solution-tag">Data Integration</div>
+              <h3>IoT & Edge Data Hub</h3>
+              <p>Connect distributed sensors, gateways, edge nodes, and cloud services to standardize data for dashboards and applications.</p>
+            </div>
+          </article>
+          <article class="card solution-card">
+            <div>
+              <div class="solution-tag">Security & Monitoring</div>
+              <h3>VMS / BMS Integration UI</h3>
+              <p>Integrate video, building systems, equipment data, and alerts into a unified operation experience.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Use Cases</div>
+            <h2>Use cases across physical spaces and digital operations.</h2>
+          </div>
+          <p class="section-desc">
+            The same core capability can be applied across different operational environments. The key is to connect space, data, and workflow in a way that supports actual management decisions.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card use-case"><h3>Smart Building</h3><p>Building operations, energy management, facility monitoring, and occupant experience.</p></article>
+          <article class="card use-case"><h3>Factory / Industrial Facility</h3><p>Equipment monitoring, production visibility, safety management, and site-level data integration.</p></article>
+          <article class="card use-case"><h3>Data Center</h3><p>Infrastructure monitoring, capacity management, environmental tracking, and uptime assurance.</p></article>
+          <article class="card use-case"><h3>Campus & Multi-Site</h3><p>Distributed asset monitoring, multi-building management, and centralized operation visibility.</p></article>
+          <article class="card use-case"><h3>Public Infrastructure</h3><p>Field assets, remote stations, environmental sensors, and operation control interfaces.</p></article>
+          <article class="card use-case"><h3>ESG & Energy Management</h3><p>Energy data, carbon-related metrics, sensor integration, and management reporting interfaces.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-highlights">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Case Highlights</div>
+            <h2>Built for system integrators and enterprise operation teams.</h2>
+          </div>
+          <p class="section-desc">
+            RealT4 can support SI partners and enterprise teams that need customized software, integration capability, and clear user interfaces for complex physical environments.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card case">
+            <div class="case-number">01</div>
+            <div>
+              <h3>Smart facility operation interface</h3>
+              <p>Convert building and equipment data into an operation dashboard with spatial context, alerts, and management views.</p>
+            </div>
+          </article>
+          <article class="card case">
+            <div class="case-number">02</div>
+            <div>
+              <h3>Industrial IoT visualization platform</h3>
+              <p>Integrate sensor data and site models to help teams monitor equipment, environment, and production-related conditions.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><strong>3D</strong><span>Spatial visualization and digital twin operation interface</span></div>
+          <div class="stat"><strong>IoT</strong><span>Sensor, gateway, edge, and cloud data integration</span></div>
+          <div class="stat"><strong>API</strong><span>Connection with VMS, BMS, EMS, and enterprise systems</span></div>
+          <div class="stat"><strong>UI</strong><span>Custom dashboards and interactive software applications</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="section-label">Contact / Request Demo</div>
+            <h2>Looking for a software partner for spatial operation systems?</h2>
+            <p>
+              RealT4 works with enterprises and system integrators to build digital twin interfaces, IoT integration platforms, and operation dashboards tailored to real project requirements.
+            </p>
+          </div>
+          <div class="contact-panel">
+            <div class="contact-item"><strong>Focus</strong><span>Enterprise Software R&D</span></div>
+            <div class="contact-item"><strong>Platforms</strong><span>3D / IoT / VMS / BMS</span></div>
+            <div class="contact-item"><strong>Engagement</strong><span>Solution design and development</span></div>
+            <div class="contact-item"><strong>Email</strong><span>contact@realt4.com</span></div>
+            <a class="btn btn-primary" style="width: 100%; margin-top: 18px;" href="mailto:contact@realt4.com">Request a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 RealT4. All rights reserved.</span>
+      <span>Software Technology R&D for Data-Driven Spatial Operations</span>
+    </div>
+  </footer>
 </body>
 </html>
