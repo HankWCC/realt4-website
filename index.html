@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealT4 | Software R&D for Data-Driven Spatial Operations</title>
-  <meta name="description" content="RealT4 builds enterprise-grade software platforms for 3D spatial visualization, IoT data integration, VMS/BMS integration, digital twin operations, and interactive facility dashboards." />
+  <title>RealT4 | Data-Driven Digital Twins for Visual Operations</title>
+  <meta name="description" content="RealT4 is a remote-friendly software R&D partner for edge-to-cloud IoT integration, equipment system connectivity, and 2D/3D digital twin interfaces." />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <meta property="og:title" content="RealT4 | Software R&D for Data-Driven Spatial Operations" />
-  <meta property="og:description" content="Enterprise-grade software platforms for 3D spatial visualization, IoT data integration, VMS/BMS integration, and digital twin operations." />
+  <meta property="og:title" content="RealT4 | Data-Driven Digital Twins for Visual Operations" />
+  <meta property="og:description" content="Edge-to-cloud IoT integration, equipment system connectivity, and 2D/3D digital twin interfaces for visual operations." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hankwcc.github.io/realt4-website/" />
   <meta property="og:image" content="https://hankwcc.github.io/realt4-website/assets/realt4-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="RealT4 | Software R&D for Data-Driven Spatial Operations" />
-  <meta name="twitter:description" content="Enterprise-grade software platforms for 3D spatial visualization, IoT data integration, VMS/BMS integration, and digital twin operations." />
+  <meta name="twitter:title" content="RealT4 | Data-Driven Digital Twins for Visual Operations" />
+  <meta name="twitter:description" content="A remote-friendly software R&D partner for edge-to-cloud IoT integration and visual operation platforms." />
   <meta name="twitter:image" content="https://hankwcc.github.io/realt4-website/assets/realt4-logo.png" />
+
   <style>
     :root {
       --bg: #05090d;
       --bg-2: #081018;
       --card: rgba(255, 255, 255, 0.055);
-      --card-2: rgba(255, 255, 255, 0.085);
       --line: rgba(118, 255, 218, 0.18);
       --line-soft: rgba(255, 255, 255, 0.11);
       --text: #f3f7fb;
@@ -28,19 +28,13 @@
       --muted-2: #718095;
       --accent: #38f5c5;
       --accent-2: #5ab8ff;
-      --warning: #f9c74f;
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
       --radius: 24px;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -67,15 +61,8 @@
       z-index: -1;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
 
     .nav {
       position: sticky;
@@ -110,11 +97,7 @@
       filter: drop-shadow(0 0 18px rgba(56, 245, 197, 0.22));
     }
 
-    .brand-text {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-    }
+    .brand-text { font-size: 18px; font-weight: 800; letter-spacing: 0.4px; }
 
     .nav-links {
       display: flex;
@@ -124,9 +107,7 @@
       font-size: 14px;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     .nav-cta {
       padding: 11px 17px;
@@ -172,11 +153,13 @@
     }
 
     h1 {
-      font-size: clamp(44px, 6vw, 82px);
-      line-height: 0.98;
+      font-size: clamp(44px, 5.4vw, 76px);
+      line-height: 1.08;
       margin: 0 0 24px;
-      letter-spacing: -2.4px;
+      letter-spacing: -2px;
     }
+
+    .desktop-break { display: block; }
 
     .hero p {
       color: #bed0df;
@@ -186,12 +169,7 @@
       max-width: 720px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
     .btn {
       display: inline-flex;
@@ -205,21 +183,9 @@
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #031016;
-      background: linear-gradient(135deg, var(--accent), #78ffe0);
-      box-shadow: 0 18px 50px rgba(56, 245, 197, 0.24);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.045);
-    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #031016; background: linear-gradient(135deg, var(--accent), #78ffe0); box-shadow: 0 18px 50px rgba(56, 245, 197, 0.24); }
+    .btn-secondary { color: var(--text); border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.045); }
 
     .visual-card {
       position: relative;
@@ -317,9 +283,7 @@
     .pill-3 { bottom: 86px; left: 58px; }
     .pill-4 { bottom: 46px; right: 52px; }
 
-    section {
-      padding: 92px 0;
-    }
+    section { padding: 92px 0; }
 
     .section-head {
       display: grid;
@@ -340,29 +304,16 @@
 
     h2 {
       font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.05;
+      line-height: 1.1;
       margin: 0;
       letter-spacing: -1.5px;
     }
 
-    .section-desc {
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 17px;
-      margin: 0;
-    }
+    .section-desc { color: var(--muted); line-height: 1.75; font-size: 17px; margin: 0; }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
     .card {
       border: 1px solid var(--line-soft);
@@ -389,19 +340,8 @@
       margin-bottom: 22px;
     }
 
-    h3 {
-      font-size: 22px;
-      line-height: 1.25;
-      margin: 0 0 12px;
-    }
-
-    .card p,
-    .feature p,
-    .case p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-    }
+    h3 { font-size: 22px; line-height: 1.3; margin: 0 0 12px; }
+    .card p, .feature p, .case p { color: var(--muted); line-height: 1.7; margin: 0; }
 
     .platform {
       border: 1px solid rgba(56,245,197,0.18);
@@ -448,14 +388,8 @@
     .n4 { bottom: 66px; right: 78px; }
     .n5 { top: 49%; left: 50%; transform: translate(-50%, -50%); background: rgba(56,245,197,0.16); }
 
-    .platform-copy {
-      align-self: center;
-    }
-
-    .platform-copy h3 {
-      font-size: clamp(28px, 3.2vw, 42px);
-      letter-spacing: -1px;
-    }
+    .platform-copy { align-self: center; }
+    .platform-copy h3 { font-size: clamp(28px, 3.2vw, 42px); letter-spacing: -1px; }
 
     .platform-list {
       display: grid;
@@ -463,23 +397,12 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .feature {
-      padding: 26px;
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .feature:last-child {
-      border-right: none;
-    }
-
-    .feature strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
+    .feature { padding: 26px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .feature:last-child { border-right: none; }
+    .feature strong { display: block; margin-bottom: 10px; color: var(--text); }
 
     .solution-card {
-      min-height: 260px;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -524,19 +447,18 @@
       z-index: 0;
     }
 
-    .use-case > * {
-      position: relative;
-      z-index: 1;
-    }
+    .use-case > * { position: relative; z-index: 1; }
 
     .case {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 1fr;
       gap: 22px;
-      align-items: center;
+      align-items: start;
+      min-height: 330px;
     }
 
     .case-number {
+      width: 132px;
       height: 132px;
       border-radius: 22px;
       display: grid;
@@ -562,22 +484,10 @@
       background: rgba(255,255,255,0.035);
     }
 
-    .stat strong {
-      display: block;
-      font-size: 28px;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
+    .stat strong { display: block; font-size: 28px; color: var(--accent); margin-bottom: 8px; }
+    .stat span { color: var(--muted); font-size: 14px; line-height: 1.5; }
 
-    .stat span {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .contact {
-      padding-bottom: 118px;
-    }
+    .contact { padding-bottom: 118px; }
 
     .contact-box {
       border-radius: 34px;
@@ -593,16 +503,8 @@
       align-items: center;
     }
 
-    .contact-box h2 {
-      margin-bottom: 18px;
-    }
-
-    .contact-box p {
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 17px;
-      margin: 0;
-    }
+    .contact-box h2 { margin-bottom: 18px; }
+    .contact-box p { color: var(--muted); line-height: 1.75; font-size: 17px; margin: 0; }
 
     .contact-panel {
       border: 1px solid rgba(255,255,255,0.11);
@@ -620,13 +522,8 @@
       color: var(--muted);
     }
 
-    .contact-item:last-child {
-      border-bottom: none;
-    }
-
-    .contact-item strong {
-      color: var(--text);
-    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item strong { color: var(--text); }
 
     footer {
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -635,70 +532,28 @@
       font-size: 14px;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+    @media (max-width: 1100px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 980px) {
-      .hero-grid,
-      .section-head,
-      .platform-top,
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-3,
-      .grid-2,
-      .stats,
-      .platform-list {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .visual-card {
-        min-height: 420px;
-      }
-
-      .nav-links {
-        display: none;
-      }
+      .hero-grid, .section-head, .platform-top, .contact-box { grid-template-columns: 1fr; }
+      .grid-3, .grid-2, .stats, .platform-list { grid-template-columns: 1fr 1fr; }
+      .visual-card { min-height: 420px; }
+      .nav-links { display: none; }
     }
 
     @media (max-width: 640px) {
-      .container {
-        width: min(100% - 32px, var(--max));
-      }
-
-      .hero {
-        padding: 56px 0 72px;
-      }
-
-      .grid-3,
-      .grid-2,
-      .stats,
-      .platform-list {
-        grid-template-columns: 1fr;
-      }
-
-      .case {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        margin-bottom: 28px;
-      }
-
-      .card,
-      .contact-box,
-      .platform-top {
-        padding: 24px;
-      }
-
-      h1 {
-        letter-spacing: -1.4px;
-      }
+      .desktop-break { display: none; }
+      .container { width: min(100% - 32px, var(--max)); }
+      .hero { padding: 56px 0 72px; }
+      .grid-4, .grid-3, .grid-2, .stats, .platform-list { grid-template-columns: 1fr; }
+      .case { grid-template-columns: 1fr; }
+      .section-head { margin-bottom: 28px; }
+      .card, .contact-box, .platform-top { padding: 24px; }
+      h1 { letter-spacing: -1.2px; }
     }
   </style>
 </head>
@@ -713,9 +568,9 @@
         <a href="#capabilities">Capabilities</a>
         <a href="#talentrue">Talentrue</a>
         <a href="#solutions">Solutions</a>
-        <a href="#use-cases">Use Cases</a>
+        <a href="#partnership">Partnership</a>
         <a href="tw.html">繁中</a>
-        <a class="nav-cta" href="#contact">Request Demo</a>
+        <a class="nav-cta" href="#contact">Discuss a Project</a>
       </nav>
     </div>
   </header>
@@ -724,14 +579,14 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Enterprise Software R&D</div>
-          <h1>Software R&D for Data-Driven Spatial Operations</h1>
+          <div class="eyebrow">Remote-Friendly Software R&D Partner</div>
+          <h1>Data-Driven Digital Twins<br class="desktop-break">for Visual Operations</h1>
           <p>
-            RealT4 builds enterprise-grade software platforms that transform physical spaces into digital operation environments through 3D spatial visualization, IoT data integration, and interactive dashboards.
+            RealT4 helps solution providers and enterprises integrate site IoT data, edge devices, equipment systems, and cloud platforms into 2D/3D digital twin interfaces for monitoring, management, and decision-making.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#solutions">Explore Solutions</a>
-            <a class="btn btn-secondary" href="#contact">Request a Demo</a>
+            <a class="btn btn-primary" href="#capabilities">Explore Capabilities</a>
+            <a class="btn btn-secondary" href="#contact">Discuss a Project</a>
           </div>
         </div>
 
@@ -743,10 +598,10 @@
             <div class="tower t3"></div>
             <div class="tower t4"></div>
           </div>
-          <div class="data-pill pill-1"><span class="dot"></span> IoT Sensors</div>
-          <div class="data-pill pill-2"><span class="dot"></span> VMS / BMS</div>
-          <div class="data-pill pill-3"><span class="dot"></span> 3D Operations</div>
-          <div class="data-pill pill-4"><span class="dot"></span> Real-Time Dashboard</div>
+          <div class="data-pill pill-1"><span class="dot"></span> Edge / IoT Data</div>
+          <div class="data-pill pill-2"><span class="dot"></span> Equipment Systems</div>
+          <div class="data-pill pill-3"><span class="dot"></span> 2D / 3D Interfaces</div>
+          <div class="data-pill pill-4"><span class="dot"></span> Visual Operations</div>
         </div>
       </div>
     </section>
@@ -755,29 +610,34 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">What RealT4 Builds</div>
-            <h2>Software platforms for physical spaces, data systems, and operational decisions.</h2>
+            <div class="section-label">Core Capabilities</div>
+            <h2>From edge integration<br class="desktop-break">to data-driven digital twins.</h2>
           </div>
           <p class="section-desc">
-            We focus on turning fragmented site data into usable software interfaces. The goal is not only to visualize buildings or facilities, but to support daily operations, monitoring, management, and system integration.
+            RealT4 bridges physical sites, edge devices, cloud software, and visual operation interfaces. We are not only building 3D visuals; we help partners connect real-world data into practical digital twin solutions that can be deployed and operated.
           </p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon">DATA</div>
+            <h3>Data & System Integration</h3>
+            <p>Connect business data, site IoT data, equipment systems, APIs, databases, and cloud services into a reliable data foundation.</p>
+          </article>
+          <article class="card">
+            <div class="icon">EDGE</div>
+            <h3>Edge-to-Cloud Integration</h3>
+            <p>Support edge device selection, IoT gateway integration, protocol testing, cloud data pipelines, and field-to-cloud validation.</p>
+          </article>
           <article class="card">
             <div class="icon">3D</div>
-            <h3>3D Spatial Visualization</h3>
-            <p>Interactive 3D spaces, site models, spatial dashboards, equipment mapping, and digital twin interfaces for facility and industrial operations.</p>
+            <h3>Digital Twin Interface Design</h3>
+            <p>Design 2D/3D interfaces that map equipment, alerts, sensor data, and operational status to real-world spaces.</p>
           </article>
           <article class="card">
-            <div class="icon">IoT</div>
-            <h3>IoT Data Integration</h3>
-            <p>Integration across sensors, edge devices, gateways, protocols, and cloud services to create reliable data flows for real-world operations.</p>
-          </article>
-          <article class="card">
-            <div class="icon">API</div>
-            <h3>System Integration</h3>
-            <p>Connection with VMS, BMS, EMS, databases, cloud platforms, and enterprise systems to avoid isolated dashboards and duplicated workflows.</p>
+            <div class="icon">R&D</div>
+            <h3>Remote Software R&D Partnership</h3>
+            <p>Work with global solution providers and enterprise teams through remote-friendly software development and integration support.</p>
           </article>
         </div>
       </div>
@@ -788,34 +648,34 @@
         <div class="section-head">
           <div>
             <div class="section-label">Talentrue Platform</div>
-            <h2>A software foundation for connected spatial operations.</h2>
+            <h2>A platform concept for<br class="desktop-break">edge-to-cloud visual operations.</h2>
           </div>
           <p class="section-desc">
-            Talentrue is a platform concept designed for integrating spatial models, IoT data, video systems, and operation dashboards into one extensible software environment.
+            Talentrue is RealT4’s platform concept for connecting business data, site IoT data, edge devices, equipment systems, and 2D/3D visual operation interfaces.
           </p>
         </div>
 
         <div class="platform">
           <div class="platform-top">
             <div class="platform-map">
-              <div class="platform-node n1">IoT Devices</div>
-              <div class="platform-node n2">VMS / BMS</div>
+              <div class="platform-node n1">Edge Devices</div>
+              <div class="platform-node n2">VMS / BMS / EMS</div>
               <div class="platform-node n3">Cloud Data</div>
-              <div class="platform-node n4">Operation UI</div>
+              <div class="platform-node n4">2D / 3D UI</div>
               <div class="platform-node n5">Talentrue Core</div>
             </div>
             <div class="platform-copy">
-              <h3>From physical assets to software-driven operation environments.</h3>
+              <h3>Connect the physical edge with cloud software and visual interfaces.</h3>
               <p class="section-desc">
-                Talentrue helps teams connect location, equipment, sensor data, video context, and workflow information. This allows stakeholders to see not only where something is, but also what is happening, what requires attention, and what action should be taken next.
+                Projects can start from data integration, system connectivity, edge validation, dashboard development, or 3D digital twin interfaces depending on partner and client requirements. The goal is to reduce integration risk from field data to visual operations.
               </p>
             </div>
           </div>
           <div class="platform-list">
-            <div class="feature"><strong>Spatial Layer</strong><p>3D site structure, floors, zones, and asset mapping.</p></div>
-            <div class="feature"><strong>Data Layer</strong><p>IoT, system APIs, event streams, and external datasets.</p></div>
-            <div class="feature"><strong>Application Layer</strong><p>Dashboards, alerts, workflows, and user-facing interfaces.</p></div>
-            <div class="feature"><strong>Integration Layer</strong><p>Connections with enterprise systems and operation tools.</p></div>
+            <div class="feature"><strong>Data Layer</strong><p>Business data, IoT data, system APIs, events, and external datasets.</p></div>
+            <div class="feature"><strong>Edge Layer</strong><p>Edge devices, gateways, protocol integration, and field validation.</p></div>
+            <div class="feature"><strong>Visual Layer</strong><p>Dashboards, floor plans, 3D sites, and digital twin interfaces.</p></div>
+            <div class="feature"><strong>Application Layer</strong><p>Alerts, workflows, monitoring, management, and user operations.</p></div>
           </div>
         </div>
       </div>
@@ -826,33 +686,33 @@
         <div class="section-head">
           <div>
             <div class="section-label">Solutions</div>
-            <h2>Practical solution modules for enterprise sites and distributed assets.</h2>
+            <h2>Practical modules for<br class="desktop-break">data-driven digital twin projects.</h2>
           </div>
           <p class="section-desc">
-            RealT4 supports solution development for smart buildings, factories, data centers, campuses, and public infrastructure where data needs to be integrated, visualized, and turned into operational value.
+            RealT4 supports smart facility, industrial IoT, data center, campus, and infrastructure projects. Partners can start from data integration, edge-to-cloud connectivity, or visual interface development, then expand into full digital twin operations.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card solution-card">
             <div>
-              <div class="solution-tag">Facility Operations</div>
-              <h3>3D Digital Twin Dashboard</h3>
-              <p>Provide a spatial operation interface that combines facility status, equipment location, alarms, and real-time monitoring.</p>
+              <div class="solution-tag">Data Foundation</div>
+              <h3>Data Integration Layer</h3>
+              <p>Integrate business data, site IoT data, APIs, databases, and cloud services into a structured foundation for dashboards and applications.</p>
             </div>
           </article>
           <article class="card solution-card">
             <div>
-              <div class="solution-tag">Data Integration</div>
-              <h3>IoT & Edge Data Hub</h3>
-              <p>Connect distributed sensors, gateways, edge nodes, and cloud services to standardize data for dashboards and applications.</p>
+              <div class="solution-tag">Edge-to-Cloud</div>
+              <h3>Equipment System Integration</h3>
+              <p>Connect VMS, BMS, EMS, gateways, edge devices, and equipment data into unified operation views.</p>
             </div>
           </article>
           <article class="card solution-card">
             <div>
-              <div class="solution-tag">Security & Monitoring</div>
-              <h3>VMS / BMS Integration UI</h3>
-              <p>Integrate video, building systems, equipment data, and alerts into a unified operation experience.</p>
+              <div class="solution-tag">Visual Operations</div>
+              <h3>2D / 3D Digital Twin Interface</h3>
+              <p>Build dashboards, floor plans, 3D spatial interfaces, and digital twin views for monitoring, management, and decision-making.</p>
             </div>
           </article>
         </div>
@@ -864,10 +724,10 @@
         <div class="section-head">
           <div>
             <div class="section-label">Use Cases</div>
-            <h2>Use cases across physical spaces and digital operations.</h2>
+            <h2>Visual operations across<br class="desktop-break">physical sites and digital systems.</h2>
           </div>
           <p class="section-desc">
-            The same core capability can be applied across different operational environments. The key is to connect space, data, and workflow in a way that supports actual management decisions.
+            Digital twin adoption does not need to start with a full 3D model. Projects can begin with data integration or 2D dashboards, then evolve into 3D interfaces when spatial context becomes important.
           </p>
         </div>
 
@@ -877,45 +737,52 @@
           <article class="card use-case"><h3>Data Center</h3><p>Infrastructure monitoring, capacity management, environmental tracking, and uptime assurance.</p></article>
           <article class="card use-case"><h3>Campus & Multi-Site</h3><p>Distributed asset monitoring, multi-building management, and centralized operation visibility.</p></article>
           <article class="card use-case"><h3>Public Infrastructure</h3><p>Field assets, remote stations, environmental sensors, and operation control interfaces.</p></article>
-          <article class="card use-case"><h3>ESG & Energy Management</h3><p>Energy data, carbon-related metrics, sensor integration, and management reporting interfaces.</p></article>
+          <article class="card use-case"><h3>Energy & ESG Operations</h3><p>Energy data, carbon-related metrics, sensor integration, and management reporting interfaces.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="case-highlights">
+    <section id="partnership">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-label">Solution Scenarios</div>
-            <h2>Built for system integrators and enterprise operation teams.</h2>
+            <div class="section-label">Partnership Scenarios</div>
+            <h2>Technical support for<br class="desktop-break">global solution delivery.</h2>
           </div>
           <p class="section-desc">
-            RealT4 can support SI partners and enterprise teams that need customized software, integration capability, and clear user interfaces for complex physical environments.
+            RealT4 works as a remote-friendly software R&D partner for system integrators, IoT solution providers, and enterprise teams that need customized integration and visual operation interfaces.
           </p>
         </div>
 
-        <div class="grid-2">
+        <div class="grid-3">
           <article class="card case">
             <div class="case-number">01</div>
             <div>
-              <h3>Smart facility operation interface</h3>
-              <p>Convert building and equipment data into an operation dashboard with spatial context, alerts, and management views.</p>
+              <h3>Partner-led IoT / Smart Facility Projects</h3>
+              <p>Support partners with data integration, dashboard development, edge-to-cloud validation, and 2D/3D visual interfaces.</p>
             </div>
           </article>
           <article class="card case">
             <div class="case-number">02</div>
             <div>
-              <h3>Industrial IoT visualization platform</h3>
-              <p>Integrate sensor data and site models to help teams monitor equipment, environment, and production-related conditions.</p>
+              <h3>Equipment System Integration</h3>
+              <p>Connect VMS, BMS, EMS, sensors, databases, APIs, and field devices into unified operation views.</p>
+            </div>
+          </article>
+          <article class="card case">
+            <div class="case-number">03</div>
+            <div>
+              <h3>Custom Visual Operation Platforms</h3>
+              <p>Build tailored dashboards, floor-plan interfaces, and 3D spatial operation views based on project requirements.</p>
             </div>
           </article>
         </div>
 
         <div class="stats">
-          <div class="stat"><strong>3D</strong><span>Spatial visualization and digital twin operation interface</span></div>
-          <div class="stat"><strong>IoT</strong><span>Sensor, gateway, edge, and cloud data integration</span></div>
-          <div class="stat"><strong>API</strong><span>Connection with VMS, BMS, EMS, and enterprise systems</span></div>
-          <div class="stat"><strong>UI</strong><span>Custom dashboards and interactive software applications</span></div>
+          <div class="stat"><strong>Edge</strong><span>Device selection, gateway integration, and field validation</span></div>
+          <div class="stat"><strong>Cloud</strong><span>Data pipelines, APIs, storage, dashboards, and applications</span></div>
+          <div class="stat"><strong>2D</strong><span>Dashboards, floor plans, alerts, and workflow interfaces</span></div>
+          <div class="stat"><strong>3D</strong><span>Spatial visualization and digital twin operation interfaces</span></div>
         </div>
       </div>
     </section>
@@ -924,18 +791,18 @@
       <div class="container">
         <div class="contact-box">
           <div>
-            <div class="section-label">Contact / Request Demo</div>
-            <h2>Looking for a software partner for spatial operation systems?</h2>
+            <div class="section-label">Contact / Discuss a Project</div>
+            <h2>Looking for a technical partner for digital twin or visual operation projects?</h2>
             <p>
-              RealT4 works with enterprises and system integrators to build digital twin interfaces, IoT integration platforms, and operation dashboards tailored to real project requirements.
+              RealT4 supports global partners and enterprises with edge-to-cloud IoT integration, equipment system connectivity, custom dashboards, and 2D/3D digital twin interfaces. Contact us to discuss your project requirements.
             </p>
           </div>
           <div class="contact-panel">
-            <div class="contact-item"><strong>Focus</strong><span>Enterprise Software R&D</span></div>
-            <div class="contact-item"><strong>Platforms</strong><span>3D / IoT / VMS / BMS</span></div>
-            <div class="contact-item"><strong>Engagement</strong><span>Solution design and development</span></div>
+            <div class="contact-item"><strong>Role</strong><span>Remote-friendly software R&D partner</span></div>
+            <div class="contact-item"><strong>Focus</strong><span>Edge / Cloud / Digital Twin</span></div>
+            <div class="contact-item"><strong>Delivery</strong><span>Integration and visual operation platforms</span></div>
             <div class="contact-item"><strong>Email</strong><span>marcom@realt4.com</span></div>
-            <a class="btn btn-primary" style="width: 100%; margin-top: 18px;" href="mailto:marcom@realt4.com">Request a Demo</a>
+            <a class="btn btn-primary" style="width: 100%; margin-top: 18px;" href="mailto:marcom@realt4.com">Discuss a Project</a>
           </div>
         </div>
       </div>
@@ -945,7 +812,7 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 RealT4. All rights reserved.</span>
-      <span>Software Technology R&D for Data-Driven Spatial Operations</span>
+      <span>Data-driven digital twins for visual operations</span>
     </div>
   </footer>
 </body>
