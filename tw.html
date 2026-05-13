@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RealT4 | 建立企業戰情，掌握場域營運</title>
-  <meta name="description" content="RealT4 協助企業整合營運資料、場域 IoT 資料與設備系統，透過 2D / 3D 可視化介面，讓管理者掌握狀態、判斷問題並採取行動。" />
+  <meta name="description" content="RealT4 協助企業整合營運資料、場域 IoT 資料與設備系統，透過 2D / 3D 可視化介面，建立企業戰情與場域營運平台，並融合 AI 輔助分析、異常判斷與營運查詢能力。" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <meta property="og:title" content="RealT4 | 建立企業戰情，掌握場域營運" />
-  <meta property="og:description" content="整合營運資料、場域 IoT 資料與設備系統，透過 2D / 3D 可視化介面，讓管理者掌握狀態、判斷問題並採取行動。" />
+  <meta property="og:description" content="整合營運資料、場域 IoT 與設備系統，透過 2D / 3D 可視化介面與 AI 輔助能力，協助管理者掌握狀態、判斷問題並採取行動。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hankwcc.github.io/realt4-website/tw.html" />
   <meta property="og:image" content="https://hankwcc.github.io/realt4-website/assets/realt4-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RealT4 | 建立企業戰情，掌握場域營運" />
-  <meta name="twitter:description" content="整合營運資料、場域 IoT 資料與設備系統，透過 2D / 3D 可視化介面，讓管理者掌握狀態、判斷問題並採取行動。" />
+  <meta name="twitter:description" content="整合營運資料、場域 IoT 與設備系統，打造融合 AI 輔助能力的可視化營運平台。" />
   <meta name="twitter:image" content="https://hankwcc.github.io/realt4-website/assets/realt4-logo.png" />
+
   <style>
     :root {
       --bg: #05090d;
       --bg-2: #081018;
       --card: rgba(255, 255, 255, 0.055);
-      --card-2: rgba(255, 255, 255, 0.085);
       --line: rgba(118, 255, 218, 0.18);
       --line-soft: rgba(255, 255, 255, 0.11);
       --text: #f3f7fb;
@@ -28,19 +28,13 @@
       --muted-2: #718095;
       --accent: #38f5c5;
       --accent-2: #5ab8ff;
-      --warning: #f9c74f;
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
       --radius: 24px;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -67,15 +61,8 @@
       z-index: -1;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
 
     .nav {
       position: sticky;
@@ -110,11 +97,7 @@
       filter: drop-shadow(0 0 18px rgba(56, 245, 197, 0.22));
     }
 
-    .brand-text {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-    }
+    .brand-text { font-size: 18px; font-weight: 800; letter-spacing: 0.4px; }
 
     .nav-links {
       display: flex;
@@ -124,9 +107,7 @@
       font-size: 14px;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     .nav-cta {
       padding: 11px 17px;
@@ -178,9 +159,7 @@
       letter-spacing: -1.8px;
     }
 
-    .desktop-break {
-      display: block;
-    }
+    .desktop-break { display: block; }
 
     .hero p {
       color: #bed0df;
@@ -190,12 +169,7 @@
       max-width: 720px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
     .btn {
       display: inline-flex;
@@ -209,21 +183,9 @@
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #031016;
-      background: linear-gradient(135deg, var(--accent), #78ffe0);
-      box-shadow: 0 18px 50px rgba(56, 245, 197, 0.24);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.045);
-    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #031016; background: linear-gradient(135deg, var(--accent), #78ffe0); box-shadow: 0 18px 50px rgba(56, 245, 197, 0.24); }
+    .btn-secondary { color: var(--text); border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.045); }
 
     .visual-card {
       position: relative;
@@ -321,9 +283,7 @@
     .pill-3 { bottom: 86px; left: 58px; }
     .pill-4 { bottom: 46px; right: 52px; }
 
-    section {
-      padding: 92px 0;
-    }
+    section { padding: 92px 0; }
 
     .section-head {
       display: grid;
@@ -349,24 +309,11 @@
       letter-spacing: -1.5px;
     }
 
-    .section-desc {
-      color: var(--muted);
-      line-height: 1.85;
-      font-size: 17px;
-      margin: 0;
-    }
+    .section-desc { color: var(--muted); line-height: 1.85; font-size: 17px; margin: 0; }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
     .card {
       border: 1px solid var(--line-soft);
@@ -391,21 +338,11 @@
       font-weight: 900;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       margin-bottom: 22px;
+      font-size: 13px;
     }
 
-    h3 {
-      font-size: 22px;
-      line-height: 1.35;
-      margin: 0 0 12px;
-    }
-
-    .card p,
-    .feature p,
-    .case p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin: 0;
-    }
+    h3 { font-size: 22px; line-height: 1.35; margin: 0 0 12px; }
+    .card p, .feature p, .case p { color: var(--muted); line-height: 1.8; margin: 0; }
 
     .platform {
       border: 1px solid rgba(56,245,197,0.18);
@@ -452,14 +389,8 @@
     .n4 { bottom: 66px; right: 78px; }
     .n5 { top: 49%; left: 50%; transform: translate(-50%, -50%); background: rgba(56,245,197,0.16); }
 
-    .platform-copy {
-      align-self: center;
-    }
-
-    .platform-copy h3 {
-      font-size: clamp(28px, 3.2vw, 42px);
-      letter-spacing: -1px;
-    }
+    .platform-copy { align-self: center; }
+    .platform-copy h3 { font-size: clamp(28px, 3.2vw, 42px); letter-spacing: -1px; }
 
     .platform-list {
       display: grid;
@@ -467,23 +398,12 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .feature {
-      padding: 26px;
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .feature:last-child {
-      border-right: none;
-    }
-
-    .feature strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
+    .feature { padding: 26px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .feature:last-child { border-right: none; }
+    .feature strong { display: block; margin-bottom: 10px; color: var(--text); }
 
     .solution-card {
-      min-height: 260px;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -528,25 +448,18 @@
       z-index: 0;
     }
 
-    .use-case > * {
-      position: relative;
-      z-index: 1;
-    }
+    .use-case > * { position: relative; z-index: 1; }
 
     .case {
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 22px;
-      align-items: center;
-    }
-
-    .scenario-card {
       grid-template-columns: 1fr;
+      gap: 22px;
       align-items: start;
       min-height: 330px;
     }
 
     .case-number {
+      width: 132px;
       height: 132px;
       border-radius: 22px;
       display: grid;
@@ -572,22 +485,10 @@
       background: rgba(255,255,255,0.035);
     }
 
-    .stat strong {
-      display: block;
-      font-size: 28px;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
+    .stat strong { display: block; font-size: 28px; color: var(--accent); margin-bottom: 8px; }
+    .stat span { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-    .stat span {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .contact {
-      padding-bottom: 118px;
-    }
+    .contact { padding-bottom: 118px; }
 
     .contact-box {
       border-radius: 34px;
@@ -603,16 +504,8 @@
       align-items: center;
     }
 
-    .contact-box h2 {
-      margin-bottom: 18px;
-    }
-
-    .contact-box p {
-      color: var(--muted);
-      line-height: 1.85;
-      font-size: 17px;
-      margin: 0;
-    }
+    .contact-box h2 { margin-bottom: 18px; }
+    .contact-box p { color: var(--muted); line-height: 1.85; font-size: 17px; margin: 0; }
 
     .contact-panel {
       border: 1px solid rgba(255,255,255,0.11);
@@ -630,13 +523,8 @@
       color: var(--muted);
     }
 
-    .contact-item:last-child {
-      border-bottom: none;
-    }
-
-    .contact-item strong {
-      color: var(--text);
-    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item strong { color: var(--text); }
 
     footer {
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -645,74 +533,28 @@
       font-size: 14px;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+    @media (max-width: 1100px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 980px) {
-      .hero-grid,
-      .section-head,
-      .platform-top,
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-3,
-      .grid-2,
-      .stats,
-      .platform-list {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .visual-card {
-        min-height: 420px;
-      }
-
-      .nav-links {
-        display: none;
-      }
+      .hero-grid, .section-head, .platform-top, .contact-box { grid-template-columns: 1fr; }
+      .grid-3, .grid-2, .stats, .platform-list { grid-template-columns: 1fr 1fr; }
+      .visual-card { min-height: 420px; }
+      .nav-links { display: none; }
     }
 
     @media (max-width: 640px) {
-      .desktop-break {
-        display: none;
-      }
-
-      .container {
-        width: min(100% - 32px, var(--max));
-      }
-
-      .hero {
-        padding: 56px 0 72px;
-      }
-
-      .grid-3,
-      .grid-2,
-      .stats,
-      .platform-list {
-        grid-template-columns: 1fr;
-      }
-
-      .case {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        margin-bottom: 28px;
-      }
-
-      .card,
-      .contact-box,
-      .platform-top {
-        padding: 24px;
-      }
-
-      h1 {
-        letter-spacing: -1.4px;
-      }
+      .desktop-break { display: none; }
+      .container { width: min(100% - 32px, var(--max)); }
+      .hero { padding: 56px 0 72px; }
+      .grid-4, .grid-3, .grid-2, .stats, .platform-list { grid-template-columns: 1fr; }
+      .case { grid-template-columns: 1fr; }
+      .section-head { margin-bottom: 28px; }
+      .card, .contact-box, .platform-top { padding: 24px; }
+      h1 { letter-spacing: -1.2px; }
     }
   </style>
 </head>
@@ -728,8 +570,9 @@
         <a href="#talentrue">Talentrue</a>
         <a href="#solutions">解決方案</a>
         <a href="#use-cases">應用場景</a>
+        <a href="#scenarios">應用情境</a>
         <a href="index.html">EN</a>
-        <a class="nav-cta" href="#contact">聯絡我們</a>
+        <a class="nav-cta" href="#contact">洽詢合作</a>
       </nav>
     </div>
   </header>
@@ -738,7 +581,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Enterprise Software R&D</div>
+          <div class="eyebrow">Enterprise Visual Operation Platform</div>
           <h1>建立企業戰情，<br class="desktop-break">掌握場域營運</h1>
           <p>
             RealT4 協助企業整合營運資料、場域 IoT 資料與設備系統，透過 2D / 3D 可視化介面，讓管理者掌握狀態、判斷問題並採取行動。
@@ -749,7 +592,7 @@
           </div>
         </div>
 
-        <div class="visual-card" aria-label="Digital twin platform visual">
+        <div class="visual-card" aria-label="Enterprise visual operation platform visual">
           <div class="orbit"></div>
           <div class="building">
             <div class="tower t1"></div>
@@ -760,7 +603,7 @@
           <div class="data-pill pill-1"><span class="dot"></span> 營運資料</div>
           <div class="data-pill pill-2"><span class="dot"></span> IoT / 設備系統</div>
           <div class="data-pill pill-3"><span class="dot"></span> 2D / 3D 可視化</div>
-          <div class="data-pill pill-4"><span class="dot"></span> 企業戰情看板</div>
+          <div class="data-pill pill-4"><span class="dot"></span> AI 輔助判斷</div>
         </div>
       </div>
     </section>
@@ -770,28 +613,33 @@
         <div class="section-head">
           <div>
             <div class="section-label">RealT4 的核心能力</div>
-            <h2>以資料整合為核心，<br class="desktop-break">以空間介面強化營運。</h2>
+            <h2>以資料整合為核心，<br class="desktop-break">以可視化介面強化營運。</h2>
           </div>
           <p class="section-desc">
-            RealT4 協助企業把分散在現場設備、IoT 感測器、影像系統與既有平台中的資料串接起來，整理成營運團隊看得懂、用得到的軟體介面。3D 是我們的重要強項，但不一定是每個專案的起點；當設備位置、場域關係與現場狀態很重要時，3D 會成為最直覺的營運介面。
+            RealT4 協助企業把分散在營運系統、現場設備、IoT 感測器與既有平台中的資料串接起來，整理成營運團隊看得懂、用得到的可視化介面。AI 不是額外包裝的噱頭，而是建立在資料整合與營運脈絡之上的輔助分析、異常判斷與互動查詢能力。
           </p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-4">
           <article class="card">
-            <div class="icon">IoT</div>
-            <h3>IoT 資料整合</h3>
-            <p>串接感測器、邊緣設備、閘道器與雲端服務，讓分散在現場的資料能穩定進入平台，支援後續監控、分析與應用開發。</p>
+            <div class="icon">資料</div>
+            <h3>營運與場域資料整合</h3>
+            <p>整合企業營運資料、IoT 感測資料、設備資料與外部資料來源，建立可支援監控、分析與 AI 應用的資料基礎。</p>
           </article>
           <article class="card">
-            <div class="icon">API</div>
-            <h3>系統整合</h3>
-            <p>整合 VMS、BMS、EMS、資料庫與企業系統，減少跨系統查詢與重複操作，讓資料能真正被營運團隊使用。</p>
+            <div class="icon">系統</div>
+            <h3>設備與系統串接</h3>
+            <p>串接 VMS、BMS、EMS、Edge、Gateway、API 與資料庫，減少跨系統查詢與重複操作。</p>
           </article>
           <article class="card">
-            <div class="icon">3D</div>
-            <h3>3D 空間介面</h3>
-            <p>當場域關係、設備位置與現場狀態需要被直覺理解時，將資料轉換成可操作的 3D 介面，協助管理者快速判斷與行動。</p>
+            <div class="icon">視覺</div>
+            <h3>2D / 3D 可視化介面</h3>
+            <p>依照場景需求，以儀表板、平面圖、3D 場域或數位孿生方式呈現營運狀態。</p>
+          </article>
+          <article class="card">
+            <div class="icon">AI</div>
+            <h3>AI 輔助營運能力</h3>
+            <p>在既有平台能力中融入 AI 輔助分析、模式型異常偵測與自然語言查詢，協助管理者更快理解狀態與風險。</p>
           </article>
         </div>
       </div>
@@ -802,34 +650,34 @@
         <div class="section-head">
           <div>
             <div class="section-label">Talentrue Platform</div>
-            <h2>串起 IoT、設備系統，<br class="desktop-break">與空間介面的營運平台。</h2>
+            <h2>串起資料、設備、介面，<br class="desktop-break">形成可延伸的營運平台。</h2>
           </div>
           <p class="section-desc">
-            Talentrue 是 RealT4 的平台概念，目標是先把現場資料與既有系統整合起來，再依照專案需要導入 3D 空間介面、影像脈絡與營運儀表板，形成可延伸的軟體應用環境。
+            Talentrue 是 RealT4 的平台概念，目標是先把企業營運資料、場域 IoT 資料與既有設備系統整合起來，再依照專案需要導入 2D / 3D 可視化介面、影像脈絡、營運儀表板與 AI 輔助分析能力。
           </p>
         </div>
 
         <div class="platform">
           <div class="platform-top">
             <div class="platform-map">
-              <div class="platform-node n1">IoT Devices</div>
-              <div class="platform-node n2">VMS / BMS</div>
-              <div class="platform-node n3">Cloud Data</div>
-              <div class="platform-node n4">Operation UI</div>
+              <div class="platform-node n1">營運資料</div>
+              <div class="platform-node n2">VMS / BMS / EMS</div>
+              <div class="platform-node n3">IoT / Edge</div>
+              <div class="platform-node n4">2D / 3D UI</div>
               <div class="platform-node n5">Talentrue Core</div>
             </div>
             <div class="platform-copy">
               <h3>先串資料，再選擇最適合的營運介面。</h3>
               <p class="section-desc">
-                Talentrue 協助團隊把設備資料、感測資料、影像脈絡、位置關係與流程資訊串在一起。專案可以從 IoT 資料整合或系統串接開始，當空間脈絡很重要時，再透過 3D 介面讓現場狀態更容易被理解與管理。
+                專案可以從資料整合、系統串接、儀表板或 3D 場域介面開始。當資料與場域脈絡逐步建立後，平台即可進一步支援 AI 輔助洞察、模式型異常偵測與 AI 營運助理，讓營運管理不只可視化，也能逐步智慧化。
               </p>
             </div>
           </div>
           <div class="platform-list">
-            <div class="feature"><strong>資料層</strong><p>IoT、系統 API、事件資料流與外部資料集。</p></div>
-            <div class="feature"><strong>整合層</strong><p>串接企業系統、營運工具與既有平台。</p></div>
-            <div class="feature"><strong>空間層</strong><p>3D 場域結構、樓層、區域與資產位置對應。</p></div>
-            <div class="feature"><strong>應用層</strong><p>儀表板、告警、流程與使用者操作介面。</p></div>
+            <div class="feature"><strong>資料層</strong><p>營運資料、IoT 資料、系統 API、事件資料與外部資料集。</p></div>
+            <div class="feature"><strong>整合層</strong><p>串接設備系統、Edge、Gateway、資料庫與既有平台。</p></div>
+            <div class="feature"><strong>可視化層</strong><p>儀表板、平面圖、3D 場域與數位孿生介面。</p></div>
+            <div class="feature"><strong>智慧應用層</strong><p>告警、流程、AI 輔助分析、營運查詢與事件摘要。</p></div>
           </div>
         </div>
       </div>
@@ -840,33 +688,40 @@
         <div class="section-head">
           <div>
             <div class="section-label">解決方案</div>
-            <h2>從資料串接到<br class="desktop-break">3D 場域營運的實務解決方案。</h2>
+            <h2>從資料串接到<br class="desktop-break">企業戰情與場域營運。</h2>
           </div>
           <p class="section-desc">
-            RealT4 支援智慧建築、工廠、資料中心、園區與公共基礎設施等場景。專案可以從 IoT 資料串接、VMS/BMS 整合或營運儀表板開始，再依照需求加入 3D 空間介面，逐步形成可落地的場域營運工具。
+            RealT4 支援智慧建築、工廠、資料中心、園區與公共基礎設施等場景。專案可以從 IoT 資料串接、VMS/BMS 整合、營運儀表板或 2D / 3D 可視化介面開始，再依照需求延伸 AI 輔助分析與營運查詢能力。
           </p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-4">
           <article class="card solution-card">
             <div>
-              <div class="solution-tag">Data Integration</div>
-              <h3>IoT 與邊緣資料平台</h3>
-              <p>整合分散式感測器、閘道器、邊緣節點與雲端服務，讓資料來源標準化，支援後續儀表板、告警與應用開發。</p>
+              <div class="solution-tag">Data Foundation</div>
+              <h3>資料整合與營運中台</h3>
+              <p>整合營運資料、IoT 資料、API、資料庫與雲端服務，形成企業戰情與後續 AI 應用的資料基礎。</p>
             </div>
           </article>
           <article class="card solution-card">
             <div>
               <div class="solution-tag">System Integration</div>
-              <h3>VMS / BMS 整合介面</h3>
-              <p>把影像、建築管理系統、設備資料與告警事件整合到同一個操作介面，降低跨系統查詢與判斷成本。</p>
+              <h3>設備系統整合介面</h3>
+              <p>串接 VMS、BMS、EMS、Edge、Gateway 與設備資料，建立可追蹤、可告警、可管理的操作介面。</p>
             </div>
           </article>
           <article class="card solution-card">
             <div>
-              <div class="solution-tag">Spatial Operations</div>
-              <h3>3D 數位孿生儀表板</h3>
-              <p>在需要空間脈絡的場景中，以 3D 介面整合場域狀態、設備位置、告警事件與即時監控資訊。</p>
+              <div class="solution-tag">Visual Operations</div>
+              <h3>2D / 3D 可視化營運</h3>
+              <p>依照場域複雜度，以儀表板、平面圖或 3D 數位孿生呈現現場狀態，讓管理者更快掌握重點。</p>
+            </div>
+          </article>
+          <article class="card solution-card">
+            <div>
+              <div class="solution-tag">AI-Assisted</div>
+              <h3>AI 輔助洞察與查詢</h3>
+              <p>在資料與可視化基礎上，支援狀態摘要、異常模式判斷與自然語言營運查詢等 AI 輔助能力。</p>
             </div>
           </article>
         </div>
@@ -878,15 +733,15 @@
         <div class="section-head">
           <div>
             <div class="section-label">應用場景</div>
-            <h2>讓不同場域都能用資料驅動營運管理。</h2>
+            <h2>讓不同場域都能<br class="desktop-break">用資料驅動營運管理。</h2>
           </div>
           <p class="section-desc">
-            不同場域的設備、資料與管理流程各不相同，但核心問題通常類似：資料分散、狀態不透明、系統彼此孤立。RealT4 的價值在於先把資料與系統連接起來，再透過儀表板、告警流程或 3D 空間介面，支援管理決策與現場行動。
+            不同場域的設備、資料與管理流程各不相同，但核心問題通常類似：資料分散、狀態不透明、系統彼此孤立。RealT4 的價值在於把資料、系統與流程連接起來，並透過可視化介面與 AI 輔助能力支援管理決策與現場行動。
           </p>
         </div>
 
         <div class="grid-3">
-          <article class="card use-case"><h3>智慧建築</h3><p>建築營運、能源管理、設施監控與使用者體驗管理。</p></article>
+          <article class="card use-case"><h3>智慧建築</h3><p>建築營運、能源管理、設施監控、告警處理與使用者體驗管理。</p></article>
           <article class="card use-case"><h3>工廠 / 工業場域</h3><p>設備監控、生產可視化、安全管理與現場資料整合。</p></article>
           <article class="card use-case"><h3>資料中心</h3><p>基礎設施監控、容量管理、環境追蹤與可用性管理。</p></article>
           <article class="card use-case"><h3>園區與多據點</h3><p>分散式資產監控、多棟建築管理與集中式營運可視化。</p></article>
@@ -896,47 +751,54 @@
       </div>
     </section>
 
-    <section id="case-highlights">
+    <section id="scenarios">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-label">Solution Scenarios</div>
-            <h2>從企業戰情到場域可視化，支援不同層級的營運需求。</h2>
+            <h2>從企業戰情到場域可視化，<br class="desktop-break">支援不同層級的營運需求。</h2>
           </div>
           <p class="section-desc">
-            RealT4 可支援系統整合商與企業團隊，從高階戰情看板、場域 IoT 與設備監控，到 2D / 3D 可視化營運介面，依照專案成熟度與實際需求逐步落地。
+            RealT4 可支援系統整合商與企業團隊，從高階戰情看板、場域 IoT 與設備監控，到 2D / 3D 可視化營運與 AI 輔助查詢，依照專案成熟度與實際需求逐步落地。
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card case scenario-card">
+        <div class="grid-4">
+          <article class="card case">
             <div class="case-number">01</div>
             <div>
               <h3>企業營運戰情看板</h3>
               <p>整合營運資料、場域狀態與關鍵指標，協助管理者快速掌握異常、趨勢與決策重點。</p>
             </div>
           </article>
-          <article class="card case scenario-card">
+          <article class="card case">
             <div class="case-number">02</div>
             <div>
               <h3>場域 IoT 與設備監控</h3>
               <p>串接感測器、設備系統、BMS / EMS / VMS 等資料來源，建立可追蹤、可告警、可管理的現場監控介面。</p>
             </div>
           </article>
-          <article class="card case scenario-card">
+          <article class="card case">
             <div class="case-number">03</div>
             <div>
               <h3>2D / 3D 可視化營運介面</h3>
-              <p>依照場域複雜度與使用情境，採用 2D 儀表板、平面圖或 3D 數位孿生介面，讓營運狀態更直覺可理解。</p>
+              <p>依照場域複雜度與使用情境，採用儀表板、平面圖或 3D 數位孿生介面，讓營運狀態更直覺可理解。</p>
+            </div>
+          </article>
+          <article class="card case">
+            <div class="case-number">04</div>
+            <div>
+              <h3>AI 輔助營運分析</h3>
+              <p>在資料基礎與營運脈絡上，支援狀態摘要、風險提示、異常模式判斷與自然語言查詢。</p>
             </div>
           </article>
         </div>
 
         <div class="stats">
-          <div class="stat"><strong>戰情</strong><span>整合企業營運資料與場域狀態，形成管理視角</span></div>
+          <div class="stat"><strong>戰情</strong><span>整合營運資料與場域狀態，形成管理視角</span></div>
           <div class="stat"><strong>IoT</strong><span>感測器、設備系統、邊緣與雲端資料整合</span></div>
-          <div class="stat"><strong>2D</strong><span>儀表板、平面圖、告警與流程操作介面</span></div>
-          <div class="stat"><strong>3D</strong><span>空間視覺化與數位孿生營運介面</span></div>
+          <div class="stat"><strong>2D/3D</strong><span>儀表板、平面圖與數位孿生營運介面</span></div>
+          <div class="stat"><strong>AI</strong><span>輔助分析、異常模式判斷與營運查詢</span></div>
         </div>
       </div>
     </section>
@@ -946,15 +808,15 @@
         <div class="contact-box">
           <div>
             <div class="section-label">聯絡我們 / 洽詢合作</div>
-            <h2>正在規劃 IoT 資料整合、智慧場域或 3D 數位孿生專案？</h2>
+            <h2>正在規劃企業戰情、智慧場域或 3D 數位孿生專案？</h2>
             <p>
-              RealT4 與企業客戶、系統整合商合作，依照實際專案需求建置 IoT 資料整合平台、VMS/BMS 串接、營運儀表板與 3D 數位孿生介面。若您正在評估場域資料平台或智慧營運系統，歡迎與我們聯繫。
+              RealT4 與企業客戶、系統整合商合作，依照實際專案需求建置資料整合平台、VMS/BMS 串接、營運儀表板、2D / 3D 可視化介面，並可融入 AI 輔助分析、異常判斷與營運查詢能力。若您正在評估場域資料平台或智慧營運系統，歡迎與我們聯繫。
             </p>
           </div>
           <div class="contact-panel">
-            <div class="contact-item"><strong>定位</strong><span>企業級軟體研發</span></div>
-            <div class="contact-item"><strong>平台能力</strong><span>3D / IoT / VMS / BMS</span></div>
-            <div class="contact-item"><strong>合作模式</strong><span>方案設計與軟體開發</span></div>
+            <div class="contact-item"><strong>定位</strong><span>企業戰情與可視化營運平台</span></div>
+            <div class="contact-item"><strong>能力</strong><span>資料整合 / IoT / 2D / 3D / AI</span></div>
+            <div class="contact-item"><strong>合作</strong><span>方案設計與軟體開發</span></div>
             <div class="contact-item"><strong>Email</strong><span>marcom@realt4.com</span></div>
             <a class="btn btn-primary" style="width: 100%; margin-top: 18px;" href="mailto:marcom@realt4.com">洽詢合作</a>
           </div>
