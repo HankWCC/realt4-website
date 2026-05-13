@@ -172,10 +172,14 @@
     }
 
     h1 {
-      font-size: clamp(40px, 5.6vw, 76px);
-      line-height: 1.08;
+      font-size: clamp(42px, 5.2vw, 72px);
+      line-height: 1.12;
       margin: 0 0 24px;
-      letter-spacing: -2.4px;
+      letter-spacing: -1.8px;
+    }
+
+    .desktop-break {
+      display: block;
     }
 
     .hero p {
@@ -673,6 +677,10 @@
     }
 
     @media (max-width: 640px) {
+      .desktop-break {
+        display: none;
+      }
+
       .container {
         width: min(100% - 32px, var(--max));
       }
@@ -731,7 +739,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Enterprise Software R&D</div>
-          <h1>建立企業戰情，掌握場域營運</h1>
+          <h1>建立企業戰情，<br class="desktop-break">掌握場域營運</h1>
           <p>
             RealT4 協助企業整合營運資料、場域 IoT 資料與設備系統，透過 2D / 3D 可視化介面，讓管理者掌握狀態、判斷問題並採取行動。
           </p>
